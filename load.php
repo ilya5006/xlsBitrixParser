@@ -27,7 +27,6 @@
     }
 
     // Файл xlsx
-    //$xls = PHPExcel_IOFactory::load(__DIR__ . '/importExample.xlsx');
     $xls = PHPExcel_IOFactory::load($file);
 
     // Первый лист

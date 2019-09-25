@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap');
+
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body
+{
+    min-height: 100vh;
+}
+
+body
+{
+    font-family: 'Be Vietnam', sans-serif;
+
+    display: flex;
+
+    background-image: linear-gradient(to bottom, #424957, #323842);
+
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+form
+{
+    display: flex;
+
+    width: 600px;
+    padding: 45px 65px;
+
+    border: 1px solid;
+    border-color: #bcc5c6 #aab2b3 #a9a9a9;
+    border-radius: 17px;
+    background-color: #dde7e9;
+    box-shadow: inset 0 1px 0 #fff, inset 0 0 0 1px #e9f0f2;
+
+    flex-flow: column nowrap;
+    align-self: center;
+    justify-content: center;
+}
+
+input[type='submit']
+{
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 34px;
+
+    width: 200px;
+    min-width: 133px;
+    height: 36px;
+    margin: 25px 0;
+    padding: 0 30px 2px 23px;
+
+    cursor: pointer;
+    text-align: center;
+
+    color: #fff;
+    border-color: #a3c926 #8eb420 #739919;
+    border-radius: 3px;
+    background: linear-gradient(to bottom, #abce11, #88ba0d);
+    box-shadow: 0 1px 0 #cfcfcf, 0 1px 1px rgba(0,0,0,.4), inset 0 1px 0 #d2e139;
+    text-shadow: 0 1px rgba(0,0,0,.2);
+}
+
+form h1
+{
+    text-shadow: 0 1px white;
+}
+
+form p
+{
+    text-shadow: 0 1px white;
+    margin: 10px 0 15px;
+}
+
+input[type='file']
+{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+label 
+{
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 34px;
+
+    width: 200px;
+    min-width: 133px;
+    height: 36px;
+    margin: 5px 0;
+    padding: 0 30px 2px 23px;
+
+    cursor: pointer;
+    text-align: center;
+
+    color: #fff;
+    border-color: #a5a5a5 #747474 #7e7e7e;
+    border-radius: 3px;
+    background: linear-gradient(to bottom, #c9c9c9, #8f8f8f) 0 0;
+    box-shadow: 0 1px 0 #cfcfcf, 0 1px 1px rgba(0,0,0,.4), inset 0 1px 0 #b9b9b9;
+    text-shadow: 0 1px rgba(0,0,0,.2);
+}
+
+@media screen and (max-width: 650px)
+{
+    form { width: 100%; }
+}

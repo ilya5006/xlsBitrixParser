@@ -29,8 +29,8 @@
 <body>
     <form method="POST" action="">
         <h1>Авторизация</h1>
-        <input type="text" name="login">
-        <input type="password" name="password">
+        <input type="text" name="login" placeholder="Логин">
+        <input type="password" name="password" placeholder="Пароль">
         <input type="submit" name="accept">
     </form>
 </body>

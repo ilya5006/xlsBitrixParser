@@ -1,3 +1,10 @@
+<?php
+if ($_COOKIE['isActive'] != true)
+{
+    header("Location: index.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>

@@ -1,55 +1,37 @@
 <?php
-    require_once './lib/PHPExcel/Classes/PHPExcel/IOFactory.php';
-    require_once './connection.php';
-
-    function isChanged($article, $quantity, $price)
+    if($_POST['accept'])
     {
-        global $link;
+        $log = 'admin';
+        $pas = '123';
 
-        $queryResult = mysqli_query($link, "SELECT quantity, price FROM shop WHERE article = '$article'") or die('Произошла какая-то ошибка. Невозможно проверить данные');
-        $queryResult = mysqli_fetch_assoc($queryResult);
-        
-        if ($queryResult['quantity'] != $quantity || $queryResult['price'] != $price)
-            return true;
-        else
-            return false;
-    }
-
-    function changeValue($article, $quantity, $price)
-    {
-        global $link;
-        mysqli_query($link, "UPDATE shop SET quantity = '$quantity', price = '$price' WHERE article = '$article'") or die('Произогла какая-то ошибка. Обновить данные не удалось');
-    }
-
-    // Файл xlsx
-    $xls = PHPExcel_IOFactory::load(__DIR__ . '/importExample.xlsx');
-
-    // Первый лист
-    $xls->setActiveSheetIndex(0);
-    $sheet = $xls->getActiveSheet();
-
-    // foreach ($sheet->toArray() as $row) {
-    //     list($article, $quantity, $price) = $row;
-    //     echo '<pre>' . $article . ' : ' . $quantity . ' : ' . $price . '</pre>';
-
-    //     if (isChanged($article, $quantity, $price))
-    //     {
-    //         changeValue($article, $quantity, $price);
-    //     }
-    //     //mysqli_query($link, "INSERT INTO shop VALUES ('$article', '$quantity', '$price')");
-    // }
-
-    $row = $sheet->toArray();
-
-    for ($i = 1; $i < count($row); $i++)
-    {
-        list($article, $quantity, $price) = $row[$i];
-
-        echo '<pre>' . $article . ' : ' . $quantity . ' : ' . $price . '</pre>';
-
-        if (isChanged($article, $quantity, $price))
+        if ($_POST['login'] == $log AND $_POST['password'] == $pas)
         {
-            changeValue($article, $quantity, $price);
+            setcookie('isActive', true, time() + 2, '/');
+            header("Location: interface.php");
+            
         }
     }
 ?>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Обновление данных в базе</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+        h1 { text-align: center; margin-bottom: 20px }
+        input { align-self: center; text-align: center }
+    </style>
+</head>
+<body>
+    <form method="POST" action="">
+        <h1>Авторизация</h1>
+        <input type="text" name="login">
+        <input type="password" name="password">
+        <input type="submit" name="accept">
+    </form>
+</body>
+</html>

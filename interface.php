@@ -18,7 +18,7 @@ if ($_COOKIE['isActive'] != true)
     
     <form method="POST" action="./load.php" enctype="multipart/form-data">
         <h1>Обновленные данных</h1>
-        <P> Выберите .xlsx</P>
+        <P> Выберите Excel-файл</P>
         <input type="file" name="file" accept=".xls, .csv, .xlsx" id="file" required>
         <label for="file">Выберите файл</label>
         <input type="submit" name="accept">
@@ -31,7 +31,6 @@ if ($_COOKIE['isActive'] != true)
 
         input.addEventListener('change', function(e)
         {
-            console.log('ыыы');
             var fileName = '';
             if ( this.files && this.files.length > 1 )
                 fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );

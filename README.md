@@ -1,2 +1,2 @@
-# xlsBitrixParser
-Парсер для обновления цены в Bitrix
+# xlsPhpParser
+Парсер для обновления цены в бд SQL
